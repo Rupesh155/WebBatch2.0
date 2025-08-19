@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moving Car Animation</title>
+  <style>
+    body {
+      margin: 0;
+
+      background: skyblue;
+    }
+
+
+    .road {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 150px;
+      background: #333;
+      overflow: hidden;
+    }
+
+
+    .line {
+      position: absolute;
+      top: 65px;
+      width: 200%;
+      height: 20px;
+      background: repeating-linear-gradient(
+        to right,
+        white 0px,
+        white 100px,
+        transparent 100px,
+        transparent 200px
+      );
+      animation: moveLines 2s linear infinite;
+    }
+
+    @keyframes moveLines {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-200px); }
+    }
+
+
+    .car {
+      position: absolute;
+      bottom: 40px;
+      left: 100px;
+      width: 200px;
+      height: 100px;
+      background: red;
+      border-radius: 20px;
+    }
+
+   
+    .wheel {
+      position: absolute;
+      bottom: -25px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background:linear-gradient(red, black);
+      border: 5px solid gray;
+      animation: rotate 1s linear infinite;
+    }
+
+    .wheel.left {
+      left: 20px;
+    }
+
+    .wheel.right {
+      right: 20px;
+    }
+
+    @keyframes rotate {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+  </style>
+</head>
+<body>
+  
+  <!-- Road -->
+  <div class="road">
+    <div class="line"></div>
+  </div>
+
+  <!-- Car -->
+  <div class="car">
+    <div class="wheel left"></div>
+    <div class="wheel right"></div>
+  </div>
+
+</body>
+</html>

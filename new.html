@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #grid{
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            border: 1px solid black;
+            column-gap: 2px;
+            row-gap: 2px;
+            /* grid-template-columns: 100px 100px 100px; */
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 2fr 1fr;
+        }
+        #grid div{
+            /* width: 100px;
+            height: 100px; */
+        }
+        #one{
+            background-color: red;
+        }
+        #two{
+            background-color: blue;
+        }
+        #three{
+            background-color: green; 
+        }
+        #four{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="grid">
+        <div id="one"></div>
+        <div id="two"></div>
+        <div id="three"></div>
+        <div id="four"></div>
+        <div id="one"></div>
+        <div id="two"></div>
+        <div id="three"></div>
+        <div id="four"></div>
+        <div id="one"></div>
+        <div id="two"></div>
+        <div id="three"></div>
+        <div id="four"></div>
+        <div id="one"></div>
+        <div id="two"></div>
+        <div id="three"></div>
+        <div id="four"></div>
+    </div>
+</body>
+</html>

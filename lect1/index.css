@@ -1,0 +1,33 @@
+#game{
+    height: 400px;
+    border: 2px solid ;
+    margin: 10px auto;
+}
+
+
+#game:hover .one{
+    margin-left: 1057px;
+}
+.one{
+    width: 100px;
+    height: 100px;
+    transition: 3s;
+    border-radius: 50%;
+}
+#one{
+    background-color: red;
+    transition-timing-function: linear;
+}
+#two{
+    background-color: blue;
+    transition-timing-function: ease-in;
+}
+#three{
+    background-color: orangered;
+    transition-timing-function: ease-out;
+}
+#four{
+    background-color:  yellowgreen;
+    transition-timing-function: cubic-bezier(0.075, -0.92, 0.165, 1);
+}
+
