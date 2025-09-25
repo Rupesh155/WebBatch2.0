@@ -113,14 +113,26 @@ const Home = () => {
     })
 
   },[])
+
+  function deletee(id){
+    // console.log(id);
+  let newArrr=   apiData.filter((a,b)=>{
+      return  b!==id
+
+    })
+    SetData(newArrr)
+
+    
+  }
   return (
     <div>
       {
-        apiData.map((a)=>{
+        apiData.map((a,index)=>{
           return(<>
           <div id='card'>
           <img  src={a.image}/>
             <p>{a.name}</p>
+            <button onClick={()=>deletee(index)}>delet</button>
            
           </div>
           </>)
