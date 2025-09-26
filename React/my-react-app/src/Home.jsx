@@ -84,8 +84,6 @@
 //   })
 // }
 
-
-
 //       {/* <h3>{count}</h3>
 //       <button onClick={()=>SetCount(count+1)}>click</button>
 //       <h3>{city}</h3>
@@ -97,10 +95,28 @@
 // export default Home
 
 // https://dummyjson.com/recipes
+
 import React, { useEffect, useState } from 'react'
 import './App.css'
 const Home = () => {
+
+
+      let arr=[1,2,3,4,5]
+      let arr1=[6,7,8,...arr]
+      console.log(arr1,"rrrr");
+      
+
+      
+
+
+
+
+
      let [apiData,SetData]=     useState([])
+     let [filteredddData,SetFilteredddData]=     useState([])
+
+     console.log("heheheheh");
+     
   useEffect(()=>{
     fetch("https://dummyjson.com/recipes").then((res)=>{
       return res.json()
@@ -108,6 +124,7 @@ const Home = () => {
     }).then((data)=>{
       console.log(data.recipes);
       SetData(data.recipes)
+      SetFilteredddData(data.recipes)
       
 
     })
@@ -124,15 +141,63 @@ const Home = () => {
 
     
   }
+  function fun1(){
+   let Data1=  [...apiData].sort((a,b)=>{
+      return a.rating-b.rating
+      
+    })
+    console.log(Data1,"SORTEDDDDD");
+    
+    SetData(Data1)
+
+
+  }
+  function fun2(){
+    let Data1=  [...apiData].sort((a,b)=>{
+      return b.rating-a.rating
+      
+    })
+    console.log(Data1,"SORTEDDDDD");
+    
+    SetData(Data1)
+
+  }
+
+  function lunch(searchValue){
+   let filtereddData=   apiData.filter((a)=>{
+      return a.mealType[0]==searchValue
+
+    })
+    SetFilteredddData(filtereddData)
+
+  }
+
+  function dinner(a){
+    let filtereddData=   apiData.filter((a)=>{
+      return a.mealType[0]==a
+
+    })
+    SetFilteredddData(filtereddData)
+
+
+  }
   return (
     <div>
+      <button onClick={fun1}>acs</button>
+      <button onClick={fun2}>des</button>
+      <button onClick={()=>lunch("Lunch")}>lunch</button>
+      <button onClick={()=>dinner("Dinner")}>dinner</button>
+      <button>breakfast</button>
+
+
       {
-        apiData.map((a,index)=>{
+        filteredddData.map((a,index)=>{
           return(<>
           <div id='card'>
           <img  src={a.image}/>
             <p>{a.name}</p>
-            <button onClick={()=>deletee(index)}>delet</button>
+            <p> Rating: {a.rating}</p>
+            <button  onClick={()=>deletee(index)}>delet</button>
            
           </div>
           </>)
