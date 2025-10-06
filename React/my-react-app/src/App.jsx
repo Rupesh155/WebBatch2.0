@@ -24,13 +24,46 @@
 
 
 
-import React from 'react'
-import Home from './Home'
+// import React from 'react'
+// import Home from './Home'
+
+// const App = () => {
+//   return (
+//     <div>
+//       <Home/>
+//     </div>
+//   )
+// }
+
+// export default App
+
+import React, { useState } from 'react'
 
 const App = () => {
+     let [input,SetInput]=      useState("")
+       let [data,SetData]=    useState([])
+  function fun1(e){
+    // console.log(e.target.value);
+    SetInput(e.target.value)
+ 
+  }
+  function done(){
+    SetData([...data,input])
+
+  }
   return (
     <div>
-      <Home/>
+
+      <input onChange={fun1}/>
+      <button onClick={done}>click</button>
+      {
+        data.map((a)=>{
+          return(<>
+          <h2>{a}</h2>
+          </>)
+
+        })
+      }
     </div>
   )
 }
