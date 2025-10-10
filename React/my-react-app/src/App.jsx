@@ -133,24 +133,126 @@
 // let {id}=obj
 
 
+// import React from 'react'
+// import SignUp from './SignUp'
+// import Login from './Login'
+// import { Route, Routes } from 'react-router-dom'
+// import Home from './Home'
+// // http://localhost:5173/
+// const App = () => {
+//   return (
+//     <div>
+//       {/* <SignUp/>
+//       <Login/> */}
+//       <Routes>
+//         <Route   path='/'    element={<Home/>}/>
+//         <Route   path='/signup'    element={<SignUp/>}/>
+//         <Route   path='/login'    element={<Login/>}/>
+
+
+//       </Routes>
+//     </div>
+//   )
+// }
+
+// export default App
+
+// import React from 'react'
+// import Home from './Home'
+// import SignUp from './SignUp'
+// import Login from './Login'
+// import { Route, Routes } from 'react-router-dom'
+
+// const App = () => {
+//   return (
+//     <div>
+//       {/* <Home/>
+//       <SignUp/>
+//       <Login/> */}
+//       <Routes>
+//         <Route   path='/'  element={<Home/>} />
+//         <Route   path='/signup'  element={<SignUp/>} />
+//         <Route   path='/login'  element={<Login/>} />
+
+
+//       </Routes>
+//     </div>
+//   )
+// }
+
+// export default App
+
+// import React, { useState } from 'react'
+
+// const App = () => {
+//   let [count,SetCount]=useState(0)
+//   return (
+//     <div>
+//       <h2>{count}</h2>
+//       <button onClick={()=> SetCount(count+1)}>click</button>
+//     </div>
+//   )
+// }
+
+// export default App
+
+// import React, { useReducer } from 'react'
+
+// const App = () => {
+//   function reduser(count,action){
+//     if(action.type=='inc'){
+//       return count+1
+//     }
+//     else{
+//       return count
+//     }
+
+//   }
+//      let [count,dispatch]=    useReducer(reduser, 0)
+//   return (
+//     <div>
+//       <h2>{count}</h2>
+//       <button onClick={()=> dispatch({type:"inc"})}>++</button>
+    
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+// import React, { useReducer } from 'react'
+
+// const App = () => {
+//   function  reduser(color,action) {
+//     if(action.type=='r'){
+//       return 'red'
+//     }else if(action.type=='g'){
+//       return 'green'
+//     }
+    
+//   }
+//      let [color,dispatch]=    useReducer(reduser,'white')
+//   return (
+//     <div   style={{backgroundColor:color}}>
+//       <button onClick={()=>dispatch({type:'r'})}>red</button>
+//       <button onClick={()=>dispatch({type:'g'})}>green</button>
+
+//     </div>
+//   )
+// }
+
+// export default App
+
+
 import React from 'react'
-import SignUp from './SignUp'
-import Login from './Login'
-import { Route, Routes } from 'react-router-dom'
 import Home from './Home'
-// http://localhost:5173/
 const App = () => {
+  let user="hello"
+
   return (
     <div>
-      {/* <SignUp/>
-      <Login/> */}
-      <Routes>
-        <Route   path='/'    element={<Home/>}/>
-        <Route   path='/signup'    element={<SignUp/>}/>
-        <Route   path='/login'    element={<Login/>}/>
-
-
-      </Routes>
+      <Home  data={user}/>
     </div>
   )
 }
