@@ -157,30 +157,38 @@
 
 // export default App
 
-// import React from 'react'
-// import Home from './Home'
-// import SignUp from './SignUp'
-// import Login from './Login'
-// import { Route, Routes } from 'react-router-dom'
+import React ,{useState}from 'react'
+import Home from './Home'
+import SignUp from './SignUp'
+import Login from './Login'
+import { Route, Routes } from 'react-router-dom'
+import AddToCart from './AddToCart'
 
-// const App = () => {
-//   return (
-//     <div>
-//       {/* <Home/>
-//       <SignUp/>
-//       <Login/> */}
-//       <Routes>
-//         <Route   path='/'  element={<Home/>} />
-//         <Route   path='/signup'  element={<SignUp/>} />
-//         <Route   path='/login'  element={<Login/>} />
+const App = () => {
+  let [apiData,SetData]=     useState([])
+  let [filteredddData,SetFilteredddData]=     useState([])
+
+    let [cart,SetCart]=    useState([])
+    console.log(cart,"h=dekhooooo");
+    
+  return (
+    <div>
+      {/* <Home/>
+      <SignUp/>
+      <Login/> */}
+      <Routes>
+        <Route   path='/'  element={<Home cart={cart} SetCart={SetCart}   apiData={apiData} SetData={SetData} filteredddData={filteredddData}    SetFilteredddData={SetFilteredddData}  />} />
+        <Route   path='/signup'  element={<SignUp/>} />
+        <Route   path='/login'  element={<Login/>} />
+        <Route   path='/cart'  element={<AddToCart cart={cart}/>} />
 
 
-//       </Routes>
-//     </div>
-//   )
-// }
+      </Routes>
+    </div>
+  )
+}
 
-// export default App
+export default App
 
 // import React, { useState } from 'react'
 
@@ -245,16 +253,18 @@
 // export default App
 
 
-import React from 'react'
-import Home from './Home'
-const App = () => {
-  let user="hello"
+// import React from 'react'
+// import Home from './Home'
+// const App = ({a}) => {
+//   let user="hello"
+//   console.log(a,"kayayay");
+  
 
-  return (
-    <div>
-      <Home  data={user}/>
-    </div>
-  )
-}
+//   return (
+//     <div>
+//       <Home  data={user}  b={a}/>
+//     </div>
+//   )
+// }
 
-export default App
+// export default App
