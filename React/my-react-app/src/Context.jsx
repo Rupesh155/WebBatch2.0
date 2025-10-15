@@ -12,8 +12,6 @@ const ContextP=({children})=>{
         cart:[]
     }
 
-
-
     function reduser(state,action){
         
         if(action.type=="FETCH_DATA"){
@@ -21,6 +19,11 @@ const ContextP=({children})=>{
                apiData:action.payload
             }
 
+        }
+        else if(action.type=="cart"){
+            return {
+                ...state,cart:[action.payload]
+            }
         }
 
     }
