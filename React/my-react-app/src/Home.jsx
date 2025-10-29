@@ -360,48 +360,102 @@
 
 // export default Home
 
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
 
-const Home = () => {
-  const [time, setTime] = useState(0);
-  const [isRunning, setIsRunning] = useState(false);
+// const Home = () => {
+//   const [time, setTime] = useState(0);
+//   const [isRunning, setIsRunning] = useState(false);
 
-  useEffect(() => {
-    let timer;
-    if (isRunning) {
-      timer = setInterval(() => {
-        setTime((prev) => prev + 1);
-        // console.log("hello");
+//   useEffect(() => {
+//     let timer;
+//     if (isRunning) {
+//       timer = setInterval(() => {
+//         setTime((prev) => prev + 1);
+//         // console.log("hello");
         
-      }, 100);
-    } else {
-      clearInterval(timer);
-    }
+//       }, 100);
+//     } else {
+//       clearInterval(timer);
+//     }
 
-    return () => clearInterval(timer);
-  }, [isRunning]);
+//     return () => clearInterval(timer);
+//   }, [isRunning]);
 
-  const formatTime = (time) => {
-    const minutes = Math.floor(time / 60);
-    const seconds = time % 60;
-    return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-  };
+//   const formatTime = (time) => {
+//     const minutes = Math.floor(time / 60);
+//     const seconds = time % 60;
+//     return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+//   };
 
-  return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>⏱ Stopwatch</h1>
-      <h2>{formatTime(time)}</h2>
-      <div>
-        <button onClick={() => setIsRunning(true)}>Start</button>
-        <button onClick={() => setIsRunning(false)}>Stop</button>
-        <button onClick={() => setTime(0)}>Reset</button>
-      </div>
-    </div>
-  );
-};
+//   return (
+//     <div style={{ textAlign: "center", marginTop: "50px" }}>
+//       <h1>⏱ Stopwatch</h1>
+//       <h2>{formatTime(time)}</h2>
+//       <div>
+//         <button onClick={() => setIsRunning(true)}>Start</button>
+//         <button onClick={() => setIsRunning(false)}>Stop</button>
+//         <button onClick={() => setTime(0)}>Reset</button>
+//       </div>
+//     </div>
+//   );
+// };
 
-export default Home;
+// export default Home;
 
+
+
+// import React, { useEffect, useState } from 'react'
+
+// const Home = () => {
+//  let [count,SetCount]=  useState(0)
+
+// //  console.log("hello");
+// useEffect(()=>{
+//   console.log("hiiii");
+  
+// },[])
+ 
+//   return (
+//     <div>
+//       <h2>{count}</h2>
+//       <button onClick={()=>SetCount(count+1)}>click</button>
+//     </div>
+//   )
+// }
+
+// export default Home
 
 
   
+
+
+import React, { useReducer } from 'react'
+
+const Home = () => {
+  function reduser(count,action){
+    if(action.type=="++"){
+      return count+1;
+    }else if(action.type=='--'){
+      return count-1
+    }else if(action.type=='reset'){
+      return 0
+    }
+    else{
+      return count
+    }
+
+  }
+    let [count,dispatch]=     useReducer(reduser,0)
+  return (
+    <div>
+      <h2>{count}</h2>
+      <button onClick={()=>dispatch({type:"++"})}>++</button>
+      <button onClick={()=>dispatch({type:"--"})}>--</button>
+      <button onClick={()=>dispatch({type:"reset"})}>reset</button>
+
+
+    </div>
+  )
+}
+
+export default Home
