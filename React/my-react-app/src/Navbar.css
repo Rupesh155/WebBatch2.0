@@ -1,0 +1,15 @@
+*{
+    /* background-color: red; */
+    margin: 0;
+    padding: 0;;
+}
+#nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    height: 30px;
+    align-items: center;
+}
+p{
+    color: white;
+}

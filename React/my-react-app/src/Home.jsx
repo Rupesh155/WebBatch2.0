@@ -429,32 +429,43 @@
   
 
 
-import React, { useReducer } from 'react'
+// import React, { useReducer } from 'react'
+
+// const Home = () => {
+//   function reduser(count,action){
+//     if(action.type=="++"){
+//       return count+1;
+//     }else if(action.type=='--'){
+//       return count-1
+//     }else if(action.type=='reset'){
+//       return 0
+//     }
+//     else{
+//       return count
+//     }
+
+//   }
+//     let [count,dispatch]=     useReducer(reduser,0)
+//   return (
+//     <div>
+//       <h2>{count}</h2>
+//       <button onClick={()=>dispatch({type:"++"})}>++</button>
+//       <button onClick={()=>dispatch({type:"--"})}>--</button>
+//       <button onClick={()=>dispatch({type:"reset"})}>reset</button>
+
+
+//     </div>
+//   )
+// }
+
+// export default Home
+
+
+import React from 'react'
 
 const Home = () => {
-  function reduser(count,action){
-    if(action.type=="++"){
-      return count+1;
-    }else if(action.type=='--'){
-      return count-1
-    }else if(action.type=='reset'){
-      return 0
-    }
-    else{
-      return count
-    }
-
-  }
-    let [count,dispatch]=     useReducer(reduser,0)
   return (
-    <div>
-      <h2>{count}</h2>
-      <button onClick={()=>dispatch({type:"++"})}>++</button>
-      <button onClick={()=>dispatch({type:"--"})}>--</button>
-      <button onClick={()=>dispatch({type:"reset"})}>reset</button>
-
-
-    </div>
+    <div>Home</div>
   )
 }
 
